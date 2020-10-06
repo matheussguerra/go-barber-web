@@ -13,11 +13,15 @@ const ToastContainer: React.FC<ToastContainerProps> = ({ messages }) => {
   return (
     <Container>
       {messages.map(message => (
-        <Toast key={message.id} hasDescription={}>
+        <Toast
+          key={message.id}
+          type={message.type}
+          hasDescription={!!message.description}
+        >
           <FiAlertCircle size={20} />
           <div>
-            <strong>Aconteceu um erro</strong>
-            <p>Não foi possível fazer o login na aplicação</p>
+            <strong>{message.title}</strong>
+            {message.description && <p>{message.description}</p>}
           </div>
           <button type="button">
             <FiXCircle size={18} />
