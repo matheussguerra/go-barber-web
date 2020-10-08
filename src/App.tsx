@@ -9,7 +9,7 @@ const App: React.FC = () => {
   return (
     <Router>
       <AppProvider>
-        <Router />
+        <Routes />
       </AppProvider>
       <GlobalStyle />
     </Router>
